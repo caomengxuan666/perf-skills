@@ -1,13 +1,14 @@
 ---
 name: linux-perf
-description: Linux perf performance analysis expert covering the complete workflow
+description: >
+  Linux perf performance analysis expert covering the complete workflow
   from environment setup through data collection, analysis, and bottleneck diagnosis.
   Expert in CPU profiling, call graph analysis, syscall tracing, and performance
   optimization. Use this skill whenever profiling C/C++/Rust/Go applications,
   diagnosing CPU bottlenecks, analyzing syscall overhead, or optimizing hot paths.
   IMPORTANT: Check permissions first. User-space profiling works without sudo,
   but kernel symbols require sudo to modify kptr_restrict and perf_event_paranoid.
-  Focus on user-space optimization (the "cause") rather than kernel (the "symptom").
+  Focus on user-space optimization rather than kernel.
 ---
 
 # Linux Perf Performance Analysis Skill

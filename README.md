@@ -280,7 +280,36 @@ perf report --stdio -i cache.data -g none
 
 ## Contributing
 
-These skills are based on real-world performance analysis experience, particularly from the astradb project. Contributions, corrections, and improvements are welcome.
+These skills are based on real-world performance analysis experience, particularly from the AstraDB project. Contributions, corrections, and improvements are welcome.
+
+## Publishing to Skill Marketplaces
+
+### Option 1: Claude Code Plugin Marketplace
+
+Create a `marketplace.json` in a new branch and submit to marketplaces like:
+
+- **SkillsMP** (https://www.skillsmp.com/) - Open skill marketplace
+- **Claude Market** (https://github.com/claude-market/marketplace) - Community marketplace
+
+### Option 2: Direct GitHub Distribution
+
+Users can install directly from GitHub:
+
+```bash
+# For Claude Code
+/plugin marketplace add caomengxuan666/perf-skills
+
+# For OpenCode - copy skill to project
+cp -r perf-skills/.claude/skills/linux-perf your-project/.claude/skills/
+```
+
+### Option 3: Git Submodule
+
+Add as a submodule in any project:
+
+```bash
+git submodule add https://github.com/caomengxuan666/perf-skills.git .claude/skills/linux-perf
+```
 
 ## License
 
@@ -288,6 +317,6 @@ This skills package is provided as-is for educational and commercial use.
 
 ## Acknowledgments
 
-- Inspired by the perf-skills project (https://github.com/QAInsights/perf-skills)
-- Based on experience with the astradb project
-- Community best practices for Linux performance analysis
+- Inspired by the AstraDB project and the perf-skills project (https://github.com/QAInsights/perf-skills)
+- Based on real-world Linux performance analysis experience
+- Community best practices

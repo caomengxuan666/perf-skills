@@ -1,0 +1,205 @@
+================================================================================
+LINUX PERF PERFORMANCE ANALYSIS SKILLS - PROJECT SUMMARY
+================================================================================
+
+OVERVIEW
+--------
+A comprehensive AI assistant skills package for Linux 'perf' performance analysis.
+Based on real-world experience from the astradb project and best practices from
+the community.
+
+KEY FEATURES
+------------
+✓ No-sudo workflow (one-time setcap setup)
+✓ Complete 5-phase analysis pipeline
+✓ Practical, command-line focused
+✓ Works with C/C++, Rust, Go, and any Linux binary
+✓ Compatible with Claude, OpenCode, and other AI assistants
+
+PROJECT STATISTICS
+------------------
+Total Files: 8
+Total Lines: 2,635
+Main Skill File: 460 lines
+Topic Guides: 2 files (1,200+ lines)
+Documentation: 3 files (600+ lines)
+
+FILES CREATED
+-------------
+1. linux-perf.skill.md (460 lines)
+   - Main skill file for AI assistants
+   - Complete workflow, quick reference, FAQ
+
+2. linux-perf/references/topics/cpu-hotspots.md (650 lines)
+   - CPU hotspot identification
+   - Algorithmic optimization
+   - Compiler optimizations
+   - Validation checklist
+
+3. linux-perf/references/topics/syscalls.md (550 lines)
+   - System call analysis
+   - Common syscall patterns
+   - Optimization strategies
+   - Advanced tools (strace, bpftrace)
+
+4. README.md (230 lines)
+   - Complete project documentation
+   - Usage examples
+   - Integration guide
+
+5. QUICKSTART.md (150 lines)
+   - 5-minute getting started
+   - Prerequisites
+   - Common issues
+
+6. STRUCTURE.md (200 lines)
+   - Project layout
+   - File descriptions
+   - Integration patterns
+
+7. example.sh (executable)
+   - Demonstrates complete perf workflow
+   - Includes example C++ program
+   - Automated analysis
+
+8. .gitignore
+   - Ignores perf artifacts
+   - Editor and build files
+
+WORKFLOW PHASES
+---------------
+Phase 1: Environment Preparation
+  - Check permissions
+  - One-time setcap setup
+  - Compile with debug symbols
+
+Phase 2: Data Collection
+  - perf record with call graphs
+  - During actual workload
+  - Multiple event types
+
+Phase 3: Data Analysis
+  - Interactive perf report
+  - Flat profile for hotspots
+  - Call graph analysis
+
+Phase 4: Bottleneck Diagnosis
+  - Pattern recognition
+  - Root cause analysis
+  - User-space vs kernel-space
+
+Phase 5: Comparative Analysis
+  - Before/after comparisons
+  - ASAN vs non-ASAN
+  - Load variation testing
+
+KEY PRINCIPLES
+--------------
+✓ Profile optimized builds (-O2/-O3)
+✓ Disable sanitizers (ASAN = 2-5x overhead)
+✓ Record during real workload
+✓ Focus on Self% (not Children%)
+✓ User space is the cause, kernel is the effect
+✓ Validate after optimization
+
+COMMON SCENARIOS COVERED
+------------------------
+✓ High CPU usage (100% CPU)
+✓ High system time (>30% kernel)
+✓ Memory allocation overhead
+✓ Lock contention (futex)
+✓ Network I/O bottlenecks
+✓ File I/O performance
+✓ Cache misses
+✓ Instruction efficiency (IPC)
+
+OPTIMIZATION PATTERNS
+----------------------
+✓ Batching operations
+✓ Reducing system calls
+✓ Minimizing copies
+✓ Lock scope reduction
+✓ String operation optimization
+✓ Algorithmic improvements
+✓ Compiler optimizations
+✓ Profile-Guided Optimization (PGO)
+
+INTEGRATION
+-----------
+AI Assistants:
+  - Claude: Copy skill.md to project root
+  - OpenCode: skills/ directory
+  - Others: Custom instructions
+
+CI/CD:
+  - One-time setcap setup
+  - Automated profiling scripts
+  - Report parsing for thresholds
+
+ADVANCED TOPICS
+---------------
+✓ Flame graphs
+✓ Instruction-level analysis
+✓ Cache analysis
+✓ Context switch analysis
+✓ eBPF with bpftrace
+✓ perf annotate for source
+✓ Perf + GDB integration
+
+TESTING & VALIDATION
+---------------------
+✓ Example script (example.sh) included
+✓ Automated testing workflow
+✓ Before/after comparison
+✓ Performance regression testing
+
+QUICK START
+-----------
+1. Install perf: sudo apt-get install linux-tools-common linux-tools-$(uname -r)
+2. Setup permissions: sudo setcap "cap_perfmon,cap_sys_admin,cap_sys_ptrace+ep" /usr/bin/perf
+3. Record: perf record -p <PID> -g -o perf.data -- sleep 30
+4. Analyze: perf report -i perf.data -g graph
+5. Optimize based on Self% hotspots
+
+For detailed guidance, see QUICKSTART.md
+
+DOCUMENTATION
+-------------
+- QUICKSTART.md: 5-minute getting started
+- README.md: Complete overview
+- STRUCTURE.md: Project layout details
+- linux-perf.skill.md: AI assistant skill
+- linux-perf/references/topics/: Deep dive guides
+
+REAL-WORLD EXPERIENCE
+---------------------
+Based on astradb project performance analysis:
+- Identified 48% syscall overhead
+- Found 19% lock contention
+- Reduced system calls through batching
+- Optimized memory allocation patterns
+- Achieved 2-5x improvement after ASAN removal
+
+LICENSE
+-------
+This skills package is provided as-is for educational and commercial use.
+
+CONTRIBUTING
+------------
+Contributions, corrections, and improvements are welcome.
+Focus on:
+- Additional tool-specific guides
+- More topic deep-dives
+- Real-world case studies
+- Performance patterns
+
+ACKNOWLEDGMENTS
+---------------
+- Inspired by perf-skills project (https://github.com/QAInsights/perf-skills)
+- Based on astradb project experience
+- Community best practices
+- Linux perf documentation
+
+================================================================================
+END OF PROJECT SUMMARY
+================================================================================

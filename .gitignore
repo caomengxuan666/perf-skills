@@ -1,0 +1,28 @@
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+perf.data
+perf-*.data
+*.data.old
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+perf_script.txt
+perf_report*.txt
+before.txt
+after.txt
+
+# Cloned repositories
+perf-skills/

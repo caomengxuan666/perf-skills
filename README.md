@@ -25,12 +25,22 @@ perf-skills/
 
 ## Installation (One-line Install)
 
-### Claude Code
+### Method 1: Vercel skills CLI (Recommended for Multiple Agents)
 ```bash
-/plugin marketplace add caomengxuan666/perf-skills
+# Install globally to all agents
+npx -y skills add https://github.com/caomengxuan666/perf-skills --global --yes
+
+# Or install to specific agents
+npx -y skills add https://github.com/caomengxuan666/perf-skills --agent opencode,claude-code --yes
 ```
 
-### OpenCode / Manual
+### Method 2: Claude Code
+```bash
+/plugin marketplace add caomengxuan666/perf-skills
+/plugin install linux-perf@caomengxuan666/perf-skills
+```
+
+### Method 3: Manual
 ```bash
 git clone https://github.com/caomengxuan666/perf-skills.git /tmp/perf-skills
 cp -r /tmp/perf-skills/.claude/skills/linux-perf your-project/.claude/skills/

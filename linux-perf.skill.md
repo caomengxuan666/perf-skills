@@ -274,7 +274,7 @@ perf report --stdio -i perf.data --sort dso,symbol -g none
 
 **4.2 User vs Kernel Analysis**
 
-**Rule:** User space is the "cause" (因), kernel space is the "effect" (果)
+**Rule:** User space is the "cause", kernel space is the "effect"
 
 ```bash
 # Check user vs kernel split

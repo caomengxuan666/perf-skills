@@ -26,3 +26,7 @@ after.txt
 
 # Cloned repositories
 perf-skills/
+
+# Temp files
+*.log
+astradb.dd

@@ -247,7 +247,7 @@ void process_items(const std::vector<Item>& items) {
 # Analyze memory mapping
 perf report --stdio -i syscalls.data -g graph --symbol-filter 'mmap'
 
-# Check if频繁的mmap/munmap
+# Check for frequent mmap/munmap
 perf script -i syscalls.data | grep -c mmap
 ```
 

@@ -2,25 +2,40 @@
 
 A comprehensive set of AI assistant skills for Linux `perf` performance analysis, based on real-world experience from the AstraDB project. These skills enable AI assistants to guide you through the complete workflow of profiling, analyzing, and optimizing application performance using Linux perf tools.
 
-## Overview
+## Features
 
-This skills package covers:
-- Environment setup (no sudo required after one-time setup)
-- CPU sampling and call graph analysis
-- System call analysis
-- Hotspot identification and optimization
-- Comparative analysis (before/after, ASAN/no-ASAN)
-- Advanced profiling techniques
+- ✅ Complete 5-phase workflow (Setup → Record → Analyze → Diagnose → Optimize)
+- ✅ Non-sudo workflow after one-time setup
+- ✅ CPU hotspot identification and optimization
+- ✅ System call analysis and bottleneck diagnosis
+- ✅ Comparative analysis (before/after, ASAN/no-ASAN)
+- ✅ Practical examples based on AstraDB project experience
+- ✅ Compatible with Claude Code, OpenCode, Cursor, and other AI agents
 
 ## Skills Structure
 
 ```
-linux-perf/
+perf-skills/
 ├── linux-perf.skill.md              # Main skill file (load this first)
-└── references/
-    └── topics/
+└── linux-perf/
+    └── references/topics/
         ├── cpu-hotspots.md          # CPU hotspot analysis guide
-        └── syscalls.md             # System call analysis guide
+        └── syscalls.md           # System call analysis guide
+```
+
+## Installation (One-line Install)
+
+### Claude Code
+```bash
+/plugin marketplace add caomengxuan666/perf-skills
+```
+
+### OpenCode / Manual
+```bash
+git clone https://github.com/caomengxuan666/perf-skills.git /tmp/perf-skills
+cp -r /tmp/perf-skills/.claude/skills/linux-perf your-project/.claude/skills/
+# OR using git submodule
+git submodule add https://github.com/caomengxuan666/perf-skills.git .claude/skills/linux-perf
 ```
 
 ## Quick Start
